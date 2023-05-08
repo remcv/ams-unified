@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Department aliases</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Alias</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="alias : ${departmentAliases}">
+                <td th:text="${alias.department.fullName}"></td>
+                <td th:text="${alias.alias}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
