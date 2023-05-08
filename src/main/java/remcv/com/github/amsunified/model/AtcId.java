@@ -1,12 +1,17 @@
 package remcv.com.github.amsunified.model;
 
+import jakarta.persistence.Column;
+
 import java.io.Serializable;
 import java.util.Objects;
 
 public class AtcId implements Serializable {
 
     // fields
+    @Column(name = "atc")
     private String atc;
+
+    @Column(name = "adm_route")
     private String admRoute;
 
     // constructors
