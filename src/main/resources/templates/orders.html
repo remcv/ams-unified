@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pharmacy orders</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Department</th>
+                <th>Order number</th>
+                <th>FO</th>
+                <th>CNP</th>
+                <th>Hospitalization</th>
+                <th>INN</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.id}"></td>
+                <td th:text="${order.orderDate}"></td>
+                <td th:text="${order.departmentAlias.department.shortName}"></td>
+                <td th:text="${order.orderNumber}"></td>
+                <td th:text="${order.fo}"></td>
+                <td th:text="${order.cnp}"></td>
+                <td th:text="${order.hospitalizationType}"></td>
+                <td th:text="${order.cim.atc.inn}"></td>
+                <td th:text="${order.quantity}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
