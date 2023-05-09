@@ -4,8 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import remcv.com.github.amsunified.model.PharmacyOrder;
+import remcv.com.github.amsunified.model.entity.PharmacyOrder;
 import remcv.com.github.amsunified.service.PharmacyOrderService;
 
 import java.util.List;
@@ -35,6 +36,19 @@ public class PharmacyOrderController {
         model.addAttribute("orders", orders);
 
         return "orders";
+    }
+
+    @PostMapping("/orders")
+    public String addMultipleOrders(
+            @RequestParam(name = "filePath") String filePath,
+            @RequestParam(name = "delim", required = false, defaultValue = "\t") String delim,
+            @RequestParam(name = "dateFormat", required = false, defaultValue = "dd.MM.YYYY") String dateFormat,
+            Model model
+    ) {
+        List<String> newCimList = pharmacyOrderService.addOrdersFromCsv(filePath, delim, dateFormat);
+        model.addAttribute("newCimList", newCimList);
+
+        return "newOrders";
     }
 
 }

@@ -5,7 +5,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import remcv.com.github.amsunified.model.DepartmentAlias;
+import remcv.com.github.amsunified.model.entity.DepartmentAlias;
 import remcv.com.github.amsunified.repository.DepartmentAliasRepository;
 
 import java.util.List;

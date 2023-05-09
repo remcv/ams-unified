@@ -1,4 +1,4 @@
-package remcv.com.github.amsunified.model;
+package remcv.com.github.amsunified.model.entity;
 
 import jakarta.persistence.*;
 

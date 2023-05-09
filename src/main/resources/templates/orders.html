@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Pharmacy orders</title>
 </head>
 
 <body>
+    <h1>DB orders</h1>
     <table>
         <thead>
             <tr>
@@ -34,6 +35,18 @@
             </tr>
         </tbody>
     </table>
+
+    <h1>New pharmacy orders</h1>
+    <h2>Import data</h2>
+    <form action="#" th:action="@{/orders}" method="post">
+        <label for="filePath">File path:</label>
+        <input type="text" id="filePath" name="filePath"><br>
+        <label for="delim">Delimiter:</label>
+        <input type="text" id="delim" value="\t" name="delim"><br>
+        <label for="dateFormat">Date format:</label>
+        <input type="text" id="dateFormat" value="dd.MM.yyyy" name="dateFormat"><br><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 
 </html>
