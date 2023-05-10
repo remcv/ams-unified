@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATC list</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>ATC</th>
+            <th>Administration route</th>
+            <th>INN</th>
+            <th>DDD</th>
+            <th>DDD update</th>
+            <th>Measurement unit</th>
+            <th>Antibiotic class</th>
+            <th>Resistance risk</th>
+            <th>CDI risk</th>
+            <th>AWaRe</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="atcItem : ${atcList}">
+            <td th:text="${atcItem.atc}"></td>
+            <td th:text="${atcItem.admRoute}"></td>
+            <td th:text="${atcItem.inn}"></td>
+            <td th:text="${atcItem.ddd}"></td>
+            <td th:text="${atcItem.dddUpdateDate}"></td>
+            <td th:text="${atcItem.measurementUnit.shortcut}"></td>
+            <td th:text="${atcItem.antibioticClass}"></td>
+            <td th:text="${atcItem.hasResistanceRisk}"></td>
+            <td th:text="${atcItem.hasCdiRisk}"></td>
+            <td th:text="${atcItem.aware}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

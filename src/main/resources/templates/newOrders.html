@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pharmacy orders</title>
+</head>
+
+<body>
+    <div th:switch="${newCimList}">
+        <h2 th:case="null">Insert operation was successful.</h2>
+        <div th:case="*">
+            <p>Insert operation failed.</p>
+            <p>New CIM codes detected.</p>
+            <p>Resolve them before re-attempting to insert the pharmacy orders.</p>
+
+            <h2>New CIM list</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>CIM code</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cim, iterStats : ${newCimList}">
+                        <td th:text="${iterStats.count}"></td>
+                        <td th:text="${cim}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
