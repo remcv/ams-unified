@@ -1,6 +1,8 @@
 server:
   servlet:
     context-path: /ams
+  error:
+    include-stacktrace: always
 
 spring:
   # datasource
