@@ -10,6 +10,7 @@ import remcv.com.github.amsunified.model.entity.PharmacyOrder;
 import remcv.com.github.amsunified.service.PharmacyOrderService;
 
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class PharmacyOrderController {
@@ -45,8 +46,8 @@ public class PharmacyOrderController {
             @RequestParam(name = "dateFormat", required = false, defaultValue = "dd.MM.YYYY") String dateFormat,
             Model model
     ) {
-        List<String> newCimList = pharmacyOrderService.addOrdersFromCsv(filePath, delim, dateFormat);
-        model.addAttribute("newCimList", newCimList);
+        Set<String> newCims = pharmacyOrderService.addOrdersFromCsv(filePath, delim, dateFormat);
+        model.addAttribute("newCims", newCims);
 
         return "newOrders";
     }
