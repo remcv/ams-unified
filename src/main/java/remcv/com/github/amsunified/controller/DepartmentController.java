@@ -25,7 +25,7 @@ public class DepartmentController {
     // methods
     @GetMapping("/departments")
     public String showDepartments(Model model) {
-        List<Department> departments = departmentRepository.findAll(Sort.by("id"));
+        List<Department> departments = departmentRepository.findAll(Sort.by("fullName"));
         model.addAttribute("departments", departments);
 
         return "department";
